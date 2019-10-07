@@ -61,12 +61,13 @@ async function start() {
 
   console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
 
-
-
-
   process.exit();
 }
 
+
+//To-Do
+//fix bug if niether y or n is entered
+//fix bug for allowing capitalization
 
 
 
