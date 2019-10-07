@@ -22,6 +22,7 @@ async function higherOrLower () {
   }
   console.log('test')
 }
+
 start();
 
 async function start() {
@@ -34,16 +35,13 @@ async function start() {
   let guessnum = findMiddlePoint(min, max);
   let guess = await ask("is it " + guessnum + "?\n");
 
-
-
-
 //go back and add toLowerCase and no
 //go back and add toLowerCase and yes 
  
-  if (guess === 'n') {
+  if (guessnum === 'n') {
     higherOrLower();
-  } else if (guess.toLowerCase === 'y' || guess.toLowerCase === 'yes') {
-    console.log('Your number was ' + guess)
+  } else {
+    console.log('Your number was ' + guessnum)
   }
 
   process.exit();
