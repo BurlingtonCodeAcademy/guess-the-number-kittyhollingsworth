@@ -47,7 +47,7 @@ async function start() {
           guessing = false
           console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
         }
-      } else {
+      } else if (highLow.toUpperCase() === 'L'){
         max = guessnum - 1
         guessnum = findMiddlePoint(min, max);
         guess = await ask("is it " + guessnum + "?\n");
@@ -56,11 +56,13 @@ async function start() {
           guessing = false
           console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
         }
+      } else {
+        console.log("You did not answer my question! I will let it slide this time, try again.")
       }
     }
   }
 
-//  console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
+  console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
 
   process.exit();
 }
@@ -68,7 +70,6 @@ async function start() {
 
 //To-Do
 //fix bug if niether y or n is entered
-//fix bug for if number is 50, currently anything other than n is a success
 
 
 //Look into switches for later
