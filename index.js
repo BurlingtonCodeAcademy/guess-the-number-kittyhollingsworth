@@ -32,7 +32,7 @@ async function start() {
 
 
 
-  if (guess.toLowerCase() === 'n' || guess.toLowerCase() ==='no') {
+  if (guess.toLowerCase() === 'n' || guess.toLowerCase() === 'no') {
 
     guessing = true;
     while (guessing === true) {
@@ -45,6 +45,7 @@ async function start() {
 
         if (guess.toLowerCase() === 'y' || guess.toLowerCase() === 'yes') {
           guessing = false
+          console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
         }
       } else {
         max = guessnum - 1
@@ -53,12 +54,13 @@ async function start() {
         guessCount += 1
         if (guess.toLowerCase() === 'y' || guess.toLowerCase() === 'yes') {
           guessing = false
+          console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
         }
       }
     }
   }
 
-  console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
+//  console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
 
   process.exit();
 }
@@ -69,8 +71,7 @@ async function start() {
 //fix bug for if number is 50, currently anything other than n is a success
 
 
-
-
+//Look into switches for later
 //  switch (guess) {
 //    case "N": 
 //      console.log('derp');
