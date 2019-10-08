@@ -45,7 +45,6 @@ async function start() {
 
         if (guess.toLowerCase() === 'y' || guess.toLowerCase() === 'yes') {
           guessing = false
-          console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
         }
       } else if (highLow.toUpperCase() === 'L'){
         max = guessnum - 1
@@ -54,7 +53,6 @@ async function start() {
         guessCount += 1
         if (guess.toLowerCase() === 'y' || guess.toLowerCase() === 'yes') {
           guessing = false
-          console.log('Your number was ' + guessnum + '!\nI guessed it in ' + guessCount + ' tries.')
         }
       } else {
         console.log("You did not answer my question! I will let it slide this time, try again.")
@@ -70,6 +68,7 @@ async function start() {
 
 //To-Do
 //fix bug if niether y or n is entered
+//can either get it to work for 50 and have double success messages or
 
 
 //Look into switches for later
