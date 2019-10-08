@@ -2,7 +2,7 @@ let min = 1
 let max = 100
 let guessnum = findMiddlePoint(min, max);
 let guessing = false;
-let guessCount = 0
+let guessCount = 1
 
 const readline = require('readline');
 const rl = readline.createInterface(process.stdin, process.stdout);
@@ -31,20 +31,19 @@ async function start() {
 
 
 
-  //go back and add toLowerCase and no
-  //go back and add toLowerCase and yes 
-  if (guess === 'n') {
+
+  if (guess.toLowerCase() === 'n' || guess.toLowerCase() ==='no') {
 
     guessing = true;
     while (guessing === true) {
       let highLow = await ask('Is it higher (H), or lower (L)?');
-      if (highLow === 'H') {
+      if (highLow.toUpperCase() === 'H') {
         min = guessnum + 1
         guessnum = findMiddlePoint(min, max);
         guess = await ask("is it " + guessnum + "?\n");
         guessCount += 1
 
-        if (guess === 'y') {
+        if (guess.toLowerCase() === 'y' || guess.toLowerCase() === 'yes') {
           guessing = false
         }
       } else {
@@ -52,7 +51,7 @@ async function start() {
         guessnum = findMiddlePoint(min, max);
         guess = await ask("is it " + guessnum + "?\n");
         guessCount += 1
-        if (guess === 'y') {
+        if (guess.toLowerCase() === 'y' || guess.toLowerCase() === 'yes') {
           guessing = false
         }
       }
@@ -67,7 +66,7 @@ async function start() {
 
 //To-Do
 //fix bug if niether y or n is entered
-//fix bug for allowing capitalization
+//fix bug for if number is 50, currently anything other than n is a success
 
 
 
